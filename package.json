@@ -5,13 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
-    "serve": "webpack-dev-server --config webpack.dev.config.js --watch",
-    "precommit": "lint-staged"
-  },
-  "husky": {
-    "hooks": {
-      "precommit": "lint-staged"
-    }
+    "serve": "webpack-dev-server --config webpack.dev.config.js --watch"
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -57,5 +51,10 @@
     "normalize.css": "^8.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
