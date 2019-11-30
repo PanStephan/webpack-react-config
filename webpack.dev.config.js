@@ -14,16 +14,12 @@ module.exports = {
   watchOptions: {
     ignored: /node_modules/
   },
+  devServer: {
+    port: 8080,
+  },
   mode: 'development',
   module: {
     rules: [
-      {
-        test: /\.pug$/i,
-        use: {
-          loader: "pug-loader",
-          query: {}, 
-        }
-      },
       {
         test: /\.(sa|sc|c)ss$/, 
         use: [
@@ -62,6 +58,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
-    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.pug'})
+    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html'})
   ]
 }

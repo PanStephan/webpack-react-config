@@ -21,13 +21,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.pug$/i,
-        use: {
-          loader: "pug-loader",
-          query: {}, 
-        }
-      },
-      {
         test: /\.(sa|sc|c)ss$/, 
         use: [
           MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'
@@ -72,6 +65,6 @@ module.exports = {
       }
     }),
     new MinifyPlugin(),
-    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.pug'})
+    new HtmlWebpackPlugin({ filename: `index.html`, template: 'src/views/index.html'})
   ]
 }
